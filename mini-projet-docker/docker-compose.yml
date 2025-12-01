@@ -1,1 +1,24 @@
-
+services:
+  backend:
+    build: ./app
+    container_name: springpage
+    ports:
+      - 8080:8080
+    environment:
+       SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: rootpass
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/db_paymybuddy
+    networks:
+      - spring-network
+    depends_on:
+      - db
+  db:
+   image: mysql:8
+    container_name: mysql
+    networks:
+      - spring-network
+    ports:
+      - "3306:3306"
+    
+networks:
+  spring-network:
