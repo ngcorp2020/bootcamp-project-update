@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  app:
+  paymybuddy-backend:
     build: 
       context: .
       dockerfile: ./app/Dockerfile
@@ -19,7 +19,7 @@ services:
       - spring-network
     
       
-  db:
+  paymybuddy-db:
    image: mysql:8
    container_name: mysql
    environment:
