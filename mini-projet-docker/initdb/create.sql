@@ -1,7 +1,7 @@
-CREATE DATABASE db_paymybuddy;
+CREATE DATABASE IF NOT EXISTS  db_paymybuddy;
 USE db_paymybuddy;
 
-CREATE TABLE user (
+CREATE TABLE IF NOT EXISTS user (
     user_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(100) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE user (
     balance DECIMAL(10, 2) NOT NULL DEFAULT 0.0
 );
 
-CREATE TABLE bank_account(
+CREATE TABLE IF NOT EXISTS  bank_account(
     account_id INT NOT NULL AUTO_INCREMENT,
     fk_user_id INT NOT NULL,
     bank_name VARCHAR(100) DEFAULT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE bank_account(
         ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 
-CREATE TABLE connection (
+CREATE TABLE IF NOT EXISTS connection (
     connection_id INT NOT NULL AUTO_INCREMENT,
     fk_initializer_id INT NOT NULL,
     fk_receiver_id INT NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE connection (
     PRIMARY KEY (connection_id, fk_initializer_id, fk_receiver_id)
 );
 
-CREATE TABLE transaction (
+CREATE TABLE IF NOT EXISTS transaction (
     transaction_id INT NOT NULL AUTO_INCREMENT,
     fk_issuer_id INT NOT NULL,
     fk_payee_id INT NOT NULL,

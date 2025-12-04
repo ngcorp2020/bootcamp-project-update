@@ -2,15 +2,15 @@ version: "3.8"
 
 services:
   paymybuddy-backend:
-    image: paymybuddy 
+    image: paymybuddy
     container_name: springpage
     ports:
-      - "8080:8080"
+      - "8090:8080"
     env_file:
       - .env
-    
     depends_on:
-      - paymybuddy-db
+      paymybuddy-db:
+        condition: service_healthy
     networks:
       - spring-network
 
@@ -19,13 +19,20 @@ services:
     container_name: mysql
     env_file:
       - .env
-      
     volumes:
       - ./initdb:/docker-entrypoint-initdb.d
-    networks:
-      - spring-network
     ports:
       - "3306:3306"
+    networks:
+      - spring-network
+
+    # 🔥 OBLIGATOIRE pour que backend attende que MySQL soit prêt
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p$MYSQL_ROOT_PASSWORD"]
+      interval: 5s
+      timeout: 5s
+      retries: 15
+      start_period: 20s
 
 networks:
   spring-network:
