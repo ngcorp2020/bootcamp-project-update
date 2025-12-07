@@ -2,14 +2,23 @@
 # PayMyBuddy - Financial Transaction Application
 
 Ce repository contient le souce code l'application PayMyBuddy.
+
 Pour mettre en route l'ensemble du système, il suffit d'exécuter les taches suivantes:
+
 **Cloner le repository sur votre environnement local
+
 **builder l'image Paymybuddy dont le dockerfile est situé dans /app
+
 **lancer le conteneur registry avec le docker compose -f docker_compose_registry.yml up --build -d
+
 **lancer le conteneur PaMybuddy et mysql avec docker compose up docker-compose.yml --build
+
 c'est fonctionne bien 
+
 ouvrir sur le navigateur l'adresse http://adresse_ip_environement:8081
+
 si tout fonctionne bien, vous deviez avoir une page comme sur cette capture d'écran
+
 <img width="1868" height="1000" alt="Capture d&#39;écran 2025-12-04 225202" src="https://github.com/user-attachments/assets/50e266ea-982c-437e-90c8-4c431a95b59f" />
 
 Ensuite creer un compte et se connecter
@@ -20,9 +29,11 @@ Avant de pusher les images sur le registre privé
 
 tagger les images avec:
   docker tag paymybuddy localhost:5000 paymypuddy:latest
+	
   docker tag mysql:8 localhost:5000 mysql:latest 
 
 Si tout est ok vous devriez avoir les 2 images dans le registry
+
 <img width="1238" height="393" alt="Capture d&#39;écran 2025-12-07 125036" src="https://github.com/user-attachments/assets/b04f07e9-7ea7-42bd-abb5-cede2a7849b8" />
 
 
