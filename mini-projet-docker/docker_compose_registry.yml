@@ -11,21 +11,6 @@ services:
       REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /var/lib/registry
     volumes:
       - registry-data:/var/lib/registry
-
-  registry-ui:
-    image: joxit/docker-registry-ui:latest
-    container_name: registry-ui
-    restart: always
-    ports:
-      - "8081:80"
-    environment:
-      - REGISTRY_TITLE=My Private Registry
-      - REGISTRY_URL=http://registry:5000
-      - SINGLE_REGISTRY=true
-      - DELETE_IMAGES=true     # activer suppression tags/images
-    depends_on:
-      - registry
-
 volumes:
   registry-data:
 
