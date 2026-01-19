@@ -14,6 +14,9 @@ Pour mettre en route l'ensemble du système, il suffit d'exécuter les taches su
 **tagger les images avec:  docker tag paymybuddy:latest localhost:5000/paymypuddy:latest
 	
 **Si tout est ok vous devriez avoir l'image dans le registry
+<img width="1834" height="855" alt="image" src="https://github.com/user-attachments/assets/a3779fc9-08bb-4d52-a388-33ef6806b67f" />
+
+
 
 **lancer le conteneur registry avec le docker compose -f docker_compose_registry.yml up --build -d
 
