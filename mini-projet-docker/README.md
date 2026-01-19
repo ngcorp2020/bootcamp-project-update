@@ -9,6 +9,12 @@ Pour mettre en route l'ensemble du système, il suffit d'exécuter les taches su
 
 **builder l'image Paymybuddy dont le dockerfile est situé dans /app
 
+**Avant de pusher les images sur le registre privé
+
+**tagger les images avec:  docker tag paymybuddy:latest localhost:5000/paymypuddy:latest
+	
+**Si tout est ok vous devriez avoir l'image dans le registry
+
 **lancer le conteneur registry avec le docker compose -f docker_compose_registry.yml up --build -d
 
 **lancer le conteneur PaMybuddy et mysql avec docker compose up docker-compose.yml --build
@@ -25,14 +31,7 @@ Ensuite creer un compte et se connecter
 <img width="1910" height="880" alt="Capture d&#39;écran 2025-12-04 225322" src="https://github.com/user-attachments/assets/8344f19b-52f0-48e3-af33-a6774f7fab46" />
 
 
-Avant de pusher les images sur le registre privé
 
-tagger les images avec:
-  docker tag paymybuddy localhost:5000 paymypuddy:latest
-	
-  docker tag mysql:8 localhost:5000 mysql:latest 
-
-Si tout est ok vous devriez avoir les 2 images dans le registry
 
 <img width="1238" height="393" alt="Capture d&#39;écran 2025-12-07 125036" src="https://github.com/user-attachments/assets/b04f07e9-7ea7-42bd-abb5-cede2a7849b8" />
 
