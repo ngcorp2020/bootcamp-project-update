@@ -33,7 +33,7 @@ Ensuite creer un compte et se connecter
 
 
 
-<img width="1238" height="393" alt="Capture d&#39;écran 2025-12-07 125036" src="https://github.com/user-attachments/assets/b04f07e9-7ea7-42bd-abb5-cede2a7849b8" />
+
 
 
 
