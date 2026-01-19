@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   paymybuddy-backend:
-    image: paymybuddy
+    image: localhost:5000/paymybuddy-backend:latest
     container_name: springpage
     ports:
       - "8090:8080"
